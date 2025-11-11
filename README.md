@@ -24,7 +24,7 @@
 
 ##  Pattern of the command
 
-1. In IBM i the command is easy to understand  
+1. In IBM i command is easy to understand and it is using control language(CL) commands for IBM i commands. 
 
 2. IBM i Command has comination that is 3+3+1 like example i need to display message you can write the code `DSPMSG`, `DSP` is 3 and `MSG` is another 3 but 1 is option this is a method.
 
