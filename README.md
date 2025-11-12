@@ -22,6 +22,172 @@
 
 5. It is fast and secure trusted by HDFC, SBI, ICICI, Axis, Toyota, Big bazzar, FedEx.
 
+# Object-Based Architecture
+
+```
+IBM i System
+│
+├── QSYS (System Library)
+│     ├── QCLSRC   (*FILE)
+│     ├── QGPL     (*LIB)
+│     └── QPRINT   (*OUTQ)
+│
+└── MYLIB (User Library)
+      ├── PAYROLL   (*PGM)
+      ├── EMPFILE   (*FILE)
+      ├── MAINMENU  (*MENU)
+      ├── STATUS    (*DTAARA)
+      └── MYPF      (*FILE)
+
+```
+
+1. The IBM i system contains many libraries.
+
+2. Each library contains many objects, such as:
+
+- Programs (*PGM)
+
+- Files (*FILE — physical, logical, display, or printer)
+
+- Menus (*MENU)
+
+- Data Areas (*DTAARA)
+
+- Commands (*CMD)
+
+- and many others.
+
+## Object
+
+1. In IBM i, an object is the basic unit of storage.
+
+2. It's how the system stores and manages everything like programs, files, libraries, and commands.
+
+3. In simple statement the everything is an object the programs, files, commands, menus, and even libraries 
+are objects stored in the system.
+
+4. When a user creates an object in IBM i, the object type is automatically assigned by the system that is based on what kind of object you’re creating.
+
+5. Example code
+
+```
+  Object name      |       Object type
+------------------ |----------------------
+ CRTLIB MYLIB      |        Library
+                   |
+ CRTPF EMPFILE     |        Physical file
+                   |
+ CRTDSPF CUSTDSP   |        Display file
+                   |
+ CRTPGM PAYROLL    |        Program
+                   |
+ CRTMSGF MSGFILE   |        Message file
+
+```
+## Library
+
+1. A Library in IBM i is a special object (type *LIB) that acts like a container or folder to store other objects such as programs, files, menus, and data areas.
+
+2. They keep the system organized.
+
+3. Help separate user data from system data.
+
+4. Allow library lists (LIBL) to find objects easily
+
+5. The code for Library.
+
+```
+CRTLIB MYLIB        /* Create a new library */
+WRKLIB MYLIB        /* Work with library objects */
+DSPLIB MYLIB        /* Display objects in library */
+DLTLIB MYLIB        /* Delete the library */
+```
+
+## Program
+
+1. A Program in IBM i is an object (type *PGM) that contains compiled instructions written in a programming language like RPGLE, CL, COBOL, or C.
+    
+2. which the system can execute to perform a specific task.
+
+3. A program is what actually does the work in the IBM i system it can read or update files, display screens, print reports, run calculations.
+
+## File
+
+1. A File in IBM i is an object (type *FILE) that is used to store or handle data.
+
+2. Files can be used for data storage, screen display, or printing output — depending on the type of file.
+
+3. There are 5 types of files they are physical file, logical file, display file, printer file and ICF file
+
+### Physical file
+
+1. A Physical File is used to store actual data — like a table in a database.
+
+2. Like an example a Excel sheet that contains real rows of data.
+
+3. Example code
+
+```
+A          R CUSTREC
+A            CUSTID       5P 0
+A            CUSTNAME    20A
+A            CITY        15A
+
+```
+
+4. When you write or read data from a file in RPGLE, it’s usually a Physical File.
+
+### Logical file
+
+1. A Logical File does not store data itself.
+
+2. It shows data from a Physical File, but in a different view or order
+
+3. Like an example filtered or sorted view of your Excel sheet the data is still in the same sheet (PF), but you see it differently.
+
+### Display file
+
+1. A Display File defines how information appears on the screen and how the user interacts with the program.
+
+2. It is used mainly in interactive programs (like RPGLE interactive applications).
+
+3. Like an example a DSPF is the user interface (UI) of your IBM i program it shows messages, lists, or input fields on a 5250 terminal screen.
+
+### Printer file
+
+1. A Printer File defines how printed output will look
+it controls the layout, spacing, and fields of a printed report.
+
+2. It’s usually used in batch RPGLE programs (non-interactive ones).
+
+3. Like an example a PRTF is like a report template
+it tells the system what to print and how to format it.
+
+### ICF file
+
+1. ICFF (Inter-Device Communication Function File) is used when the IBM i system communicates with an external system or device.
+
+2. Like an example ICFF acts like a bridge it allows data exchange between IBM i and other external systems.
+
+## Menu
+
+1. A Menu is an *object (type *MENU) that provides a list of options or commands to help users navigate and run tasks easily.
+
+2. It acts as a user interface to help people run programs or commands easily — without typing them manually.
+
+3. A menu is like a main screen in IBM i where users can see choices like:
+
+- 1. Display Employee Details  
+- 2. Add New Employee  
+- 3. Print Report  
+- 4. Exit
+
+## Status
+
+1. Status in IBM i means the current condition or state of something such as a job, system, device, or program at a particular time.
+
+# IBM i Command System
+
 ##  Pattern of the command
 
 1. In IBM i command is easy to understand and it is using control language(CL) commands for IBM i commands. 
@@ -66,6 +232,19 @@ WRKACT JOB
 ```
 WRKSYS STS
 ```
+## Difference b/w WRKACT JOB vs WRKSYS STS
+
+### WRKACT JOB
+
+- Shows details of all active jobs running on the system like each program, user, and subsystem.
+
+- You can check what’s using CPU, or which job is slow or stuck.
+
+### WRKSYS STS
+
+- Shows overall system performance — like CPU usage, memory, and storage.
+
+- It's like the task manger.
 
 
 
