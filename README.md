@@ -207,6 +207,7 @@ GO LICPGM
 ```
 3. `LICPGM` means license program this code is for we can see what are the license we have.
 
+
 ## Work with active jobs
 
 1. It shows you a list of all active jobs like programs, users, or system processes currently running on the IBM i system.
