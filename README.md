@@ -207,7 +207,6 @@ GO LICPGM
 ```
 3. `LICPGM` means license program this code is for we can see what are the license we have.
 
-
 ## Work with active jobs
 
 1. It shows you a list of all active jobs like programs, users, or system processes currently running on the IBM i system.
@@ -286,6 +285,67 @@ WRKSYS STS
 6. Programs written in RPGLE are typically compiled and run on IBM i.
 
 7. In this program there are lots of commands are used.
+
+## Fixed format converted to free format
+
+### Fixed format
+
+1. Fixed format (in RPG or RPGLE) means the old style of writing RPG code where each part of the line must be written in a specific column.
+
+2. It is the traditional way of writing RPG before free-format was introduced.
+
+3. Variable names in certain columns
+
+4. Result fields in certain columns
+
+5. Keywords in certain columns
+
+6. Example
+
+```
+
+D Number3    S    3I 0     
+
+```
+7. D means Definition specification it means it is used to declare
+Variables, Data structures, Constants, Arrays, Prototypes (procedures).
+
+8. Number 3 is variable name and S means standalone it means a standalone variable means a variable that is not part of any group, class, array, structure, or object and it exists independently by itself.
+
+9. 3I 0 means I means data type like integer, float, packed and zoned and 3 means length of the variable. 
+
+### Free format
+
+1. Free format in RPGLE means you can write your code anywhere on the line, without following strict column positions.
+
+2. It is the modern style of RPG programming.
+
+3. Write code freely like Java, Python, C.
+
+4. More readable and easier to learn.
+
+5. Example
+
+```
+
+DCL-S Number3 int(3);
+
+```
+
+6. DCL means declare and S means standalone and Number3 means variable name and int means data types and 3 means length of the variable. 
+
+### Convertion of fixed format to free format
+
+```
+
+D Number3    S    3I 0   --- Fixed format
+
+DCL-S Number3 int(3); --- Free format
+
+```
+
+
+
 
 
 
