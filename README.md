@@ -311,7 +311,7 @@ D FirstName     S     30A  -- Fixed format
 DCL-S FirstName     char(30); -- Free format
 
 ```
-3. Converstion using varying keyword
+### Converstion using varying keyword
 
 ```
 
@@ -321,7 +321,7 @@ DCL-S FirstName     varchar(30); -- Free format
 
 ```
 
-4. Converstion using Like keyword
+### Converstion using Like keyword
 
 ```
 
@@ -343,7 +343,7 @@ DCL-S LastName     Like(FirstName); -- Free format
 
 **FREE is used to enable free format syntax and you can write code anywhere on the line. DSPLY 'HELLO WORLD' if call the program the hello world will be display.
 
-*INLR = *ON means last record indicator and *ON means true.
+*INLR = *ON means last record indicator and *ON means true. 
 
 
 
